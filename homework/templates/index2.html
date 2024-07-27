@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>HOMEWORK</title>
+</head>
+<body>
+
+    <div>
+        {% csrf_token %}
+        <h2> 메시지 <br></h2>
+        <strong>{{ msg }}</strong><br>
+
+        <h3> 세션 값: <strong>{{ session }}<strong></h3><br>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">로그아웃</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

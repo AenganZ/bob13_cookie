@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>HOMEWORK</title>
+</head>
+<body>
+
+    <div>
+        {% csrf_token %}
+        <h2> 메시지 <br></h2>
+        <strong>{{ msg }}</strong><br>
+
+        <h3> 세션 값: <strong>{{ session }}<strong></h3><br>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="userid">ID</label>
+                <input type="text" id="userid" name="userid">
+            </div>
+            <div>
+                <label for="password">비밀번호</label>
+                <input type="password" id="userpw" name="userpw">
+            </div>
+            <button type="submit" class="btn btn-primary">로그인</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
